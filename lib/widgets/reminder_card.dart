@@ -12,12 +12,12 @@ class ReminderCard extends StatelessWidget {
   final VoidCallback? onDelete;
 
   const ReminderCard({
-    Key? key,
+    super.key,
     required this.reminder,
     this.onTap,
     this.onComplete,
     this.onDelete,
-  }) : super(key: key);
+  });
 
   Color _getCategoryColor() {
     switch (reminder.category.toLowerCase()) {

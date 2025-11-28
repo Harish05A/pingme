@@ -14,7 +14,7 @@ import 'package:pingme/widgets/tag_chip.dart';
 /// Regain-Style Focus Mode Screen
 /// Minimal circular timer with clean preset selection
 class FocusModeScreen extends StatefulWidget {
-  const FocusModeScreen({Key? key}) : super(key: key);
+  const FocusModeScreen({super.key});
 
   @override
   State<FocusModeScreen> createState() => _FocusModeScreenState();
@@ -22,7 +22,7 @@ class FocusModeScreen extends StatefulWidget {
 
 class _FocusModeScreenState extends State<FocusModeScreen> {
   Timer? _uiUpdateTimer;
-  Map<String, String> _currentQuote = MotivationalQuotes.getRandomQuote();
+  final Map<String, String> _currentQuote = MotivationalQuotes.getRandomQuote();
   int _selectedDuration = 25; // Default Pomodoro
 
   final List<Map<String, dynamic>> _presets = [

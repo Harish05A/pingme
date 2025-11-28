@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pingme/services/app_detector_service.dart';
 import 'package:pingme/services/live_update_service.dart';

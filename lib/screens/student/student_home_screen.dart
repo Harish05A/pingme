@@ -17,7 +17,7 @@ import 'package:intl/intl.dart';
 /// Regain-Style Home Screen
 /// Clean, minimal, spacious layout with focus card, stats, and reminders
 class StudentHomeScreen extends StatefulWidget {
-  const StudentHomeScreen({Key? key}) : super(key: key);
+  const StudentHomeScreen({super.key});
 
   @override
   State<StudentHomeScreen> createState() => _StudentHomeScreenState();
@@ -401,7 +401,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                 _showDeleteConfirmation(context, reminder);
               },
             );
-          }).toList(),
+          }),
       ],
     );
   }

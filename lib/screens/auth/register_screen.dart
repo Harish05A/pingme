@@ -8,7 +8,7 @@ import 'package:pingme/widgets/custom_button.dart';
 import 'package:pingme/widgets/custom_text_field.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -23,7 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _rollNumberController = TextEditingController();
   final _departmentController = TextEditingController();
   final _phoneController = TextEditingController();
-  
+
   bool _isLoading = false;
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
@@ -52,9 +52,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
       password: _passwordController.text,
       name: _nameController.text.trim(),
       role: _selectedRole,
-      rollNumber: _selectedRole == UserRole.student ? _rollNumberController.text.trim() : null,
-      department: _departmentController.text.trim().isNotEmpty ? _departmentController.text.trim() : null,
-      phoneNumber: _phoneController.text.trim().isNotEmpty ? _phoneController.text.trim() : null,
+      rollNumber: _selectedRole == UserRole.student
+          ? _rollNumberController.text.trim()
+          : null,
+      department: _departmentController.text.trim().isNotEmpty
+          ? _departmentController.text.trim()
+          : null,
+      phoneNumber: _phoneController.text.trim().isNotEmpty
+          ? _phoneController.text.trim()
+          : null,
     );
 
     setState(() => _isLoading = false);
@@ -65,7 +71,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           content: Text(authProvider.errorMessage ?? 'Registration failed'),
           backgroundColor: AppTheme.errorRed,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
       );
     }
@@ -114,7 +121,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     icon: const Icon(Icons.arrow_back_ios_new_rounded),
                     onPressed: () => Navigator.pop(context),
                     style: IconButton.styleFrom(
-                      backgroundColor: isDark ? AppTheme.cardDark : Colors.white,
+                      backgroundColor:
+                          isDark ? AppTheme.cardDark : Colors.white,
                       padding: const EdgeInsets.all(12),
                     ),
                   ).animate().fadeIn().slideX(begin: -0.2, end: 0),
@@ -153,7 +161,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           title: 'Student',
                           icon: Icons.school_rounded,
                           isSelected: _selectedRole == UserRole.student,
-                          onTap: () => setState(() => _selectedRole = UserRole.student),
+                          onTap: () =>
+                              setState(() => _selectedRole = UserRole.student),
                         ),
                       ),
                       const SizedBox(width: 16),
@@ -162,11 +171,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           title: 'Faculty',
                           icon: Icons.person_outline_rounded,
                           isSelected: _selectedRole == UserRole.faculty,
-                          onTap: () => setState(() => _selectedRole = UserRole.faculty),
+                          onTap: () =>
+                              setState(() => _selectedRole = UserRole.faculty),
                         ),
                       ),
                     ],
-                  ).animate().fadeIn(delay: 300.ms).scale(begin: const Offset(0.9, 0.9)),
+                  )
+                      .animate()
+                      .fadeIn(delay: 300.ms)
+                      .scale(begin: const Offset(0.9, 0.9)),
 
                   const SizedBox(height: 24),
 
@@ -216,14 +229,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       prefixIcon: Icons.badge_outlined,
                       textCapitalization: TextCapitalization.characters,
                       validator: (value) {
-                        if (_selectedRole == UserRole.student && (value == null || value.isEmpty)) {
+                        if (_selectedRole == UserRole.student &&
+                            (value == null || value.isEmpty)) {
                           return 'Please enter your roll number';
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 600.ms).slideX(begin: -0.2, end: 0),
+                    )
+                        .animate()
+                        .fadeIn(delay: 600.ms)
+                        .slideX(begin: -0.2, end: 0),
 
-                  if (_selectedRole == UserRole.student) const SizedBox(height: 16),
+                  if (_selectedRole == UserRole.student)
+                    const SizedBox(height: 16),
 
                   // Department Field
                   CustomTextField(
@@ -256,7 +274,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscureText: _obscurePassword,
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                        _obscurePassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
                       ),
                       onPressed: () {
                         setState(() => _obscurePassword = !_obscurePassword);
@@ -284,10 +304,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscureText: _obscureConfirmPassword,
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscureConfirmPassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                        _obscureConfirmPassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
                       ),
                       onPressed: () {
-                        setState(() => _obscureConfirmPassword = !_obscureConfirmPassword);
+                        setState(() =>
+                            _obscureConfirmPassword = !_obscureConfirmPassword);
                       },
                     ),
                     validator: (value) {
@@ -299,7 +322,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }
                       return null;
                     },
-                  ).animate().fadeIn(delay: 1000.ms).slideX(begin: -0.2, end: 0),
+                  )
+                      .animate()
+                      .fadeIn(delay: 1000.ms)
+                      .slideX(begin: -0.2, end: 0),
 
                   const SizedBox(height: 32),
 
@@ -396,7 +422,9 @@ class _RoleCard extends StatelessWidget {
             Icon(
               icon,
               size: 32,
-              color: isSelected ? Colors.white : (isDark ? Colors.grey.shade400 : Colors.grey.shade700),
+              color: isSelected
+                  ? Colors.white
+                  : (isDark ? Colors.grey.shade400 : Colors.grey.shade700),
             ),
             const SizedBox(height: 8),
             Text(
@@ -404,7 +432,9 @@ class _RoleCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: isSelected ? Colors.white : (isDark ? Colors.white : AppTheme.textDark),
+                color: isSelected
+                    ? Colors.white
+                    : (isDark ? Colors.white : AppTheme.textDark),
               ),
             ),
           ],

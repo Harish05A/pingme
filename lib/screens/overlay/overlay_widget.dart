@@ -3,7 +3,7 @@ import 'package:flutter_overlay_window/flutter_overlay_window.dart';
 import 'package:pingme/config/app_theme.dart';
 
 class OverlayWidget extends StatefulWidget {
-  const OverlayWidget({Key? key}) : super(key: key);
+  const OverlayWidget({super.key});
 
   @override
   State<OverlayWidget> createState() => _OverlayWidgetState();
@@ -31,7 +31,7 @@ class _OverlayWidgetState extends State<OverlayWidget> {
   @override
   Widget build(BuildContext context) {
     final isDistraction = _type == 'distraction';
-    
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -70,14 +70,16 @@ class _OverlayWidgetState extends State<OverlayWidget> {
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
-                      isDistraction ? Icons.warning_amber_rounded : Icons.notifications_active_rounded,
+                      isDistraction
+                          ? Icons.warning_amber_rounded
+                          : Icons.notifications_active_rounded,
                       size: 48,
                       color: Colors.white,
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
-                  
+
                   // Title
                   Text(
                     _title,
@@ -88,9 +90,9 @@ class _OverlayWidgetState extends State<OverlayWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  
+
                   const SizedBox(height: 12),
-                  
+
                   // Body
                   Text(
                     _body,
@@ -101,9 +103,9 @@ class _OverlayWidgetState extends State<OverlayWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  
+
                   const SizedBox(height: 32),
-                  
+
                   // Actions
                   Row(
                     children: [
@@ -140,7 +142,9 @@ class _OverlayWidgetState extends State<OverlayWidget> {
                           style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             backgroundColor: Colors.white,
-                            foregroundColor: isDistraction ? AppTheme.errorRed : AppTheme.primaryPurple,
+                            foregroundColor: isDistraction
+                                ? AppTheme.errorRed
+                                : AppTheme.primaryPurple,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

@@ -11,13 +11,13 @@ class TagChip extends StatelessWidget {
   final bool isSelected;
 
   const TagChip({
-    Key? key,
+    super.key,
     required this.label,
     this.color,
     this.icon,
     this.onTap,
     this.isSelected = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

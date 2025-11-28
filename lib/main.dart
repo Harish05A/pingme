@@ -52,7 +52,7 @@ void main() async {
 }
 
 class PingMeApp extends StatefulWidget {
-  const PingMeApp({Key? key}) : super(key: key);
+  const PingMeApp({super.key});
 
   @override
   State<PingMeApp> createState() => _PingMeAppState();
@@ -113,7 +113,7 @@ class _PingMeAppState extends State<PingMeApp> {
 }
 
 class AuthWrapper extends StatefulWidget {
-  const AuthWrapper({Key? key}) : super(key: key);
+  const AuthWrapper({super.key});
 
   @override
   State<AuthWrapper> createState() => _AuthWrapperState();

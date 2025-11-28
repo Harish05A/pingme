@@ -14,7 +14,7 @@ class MinimalButton extends StatelessWidget {
   final double? height;
 
   const MinimalButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.isOutlined = false,
@@ -23,7 +23,7 @@ class MinimalButton extends StatelessWidget {
     this.color,
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

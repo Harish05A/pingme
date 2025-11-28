@@ -44,7 +44,7 @@ class AppTheme {
   static const Color infoBlue = info;
 
   // Deprecated - kept for compatibility
-  static get textDark => textPrimary;
+  static Color get textDark => textPrimary;
 
   // ==================== SPACING SYSTEM ====================
 
@@ -177,7 +177,6 @@ class AppTheme {
       secondary: accent,
       error: error,
       surface: surface,
-      background: background,
     ),
     textTheme: TextTheme(
       displayLarge: h1,
@@ -292,7 +291,6 @@ class AppTheme {
       secondary: accent,
       error: error,
       surface: cardDark,
-      background: backgroundDark,
     ),
     textTheme: TextTheme(
       displayLarge: h1.copyWith(color: textLight),

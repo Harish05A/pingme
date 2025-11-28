@@ -19,7 +19,7 @@ class CustomTextField extends StatelessWidget {
   final TextCapitalization textCapitalization;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.label,
     required this.hint,
@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
     this.enabled = true,
     this.inputFormatters,
     this.textCapitalization = TextCapitalization.none,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +128,7 @@ class CustomDropdown<T> extends StatelessWidget {
   final String? Function(T?)? validator;
 
   const CustomDropdown({
-    Key? key,
+    super.key,
     required this.label,
     required this.hint,
     required this.value,
@@ -136,7 +136,7 @@ class CustomDropdown<T> extends StatelessWidget {
     required this.onChanged,
     this.prefixIcon,
     this.validator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +156,7 @@ class CustomDropdown<T> extends StatelessWidget {
           const SizedBox(height: 8),
         ],
         DropdownButtonFormField<T>(
-          value: value,
+          initialValue: value,
           items: items,
           onChanged: onChanged,
           validator: validator,

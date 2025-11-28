@@ -6,7 +6,7 @@ import 'package:pingme/providers/auth_provider.dart';
 import 'package:pingme/providers/focus_provider.dart';
 
 class AchievementsScreen extends StatefulWidget {
-  const AchievementsScreen({Key? key}) : super(key: key);
+  const AchievementsScreen({super.key});
 
   @override
   State<AchievementsScreen> createState() => _AchievementsScreenState();

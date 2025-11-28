@@ -7,7 +7,7 @@ import 'package:pingme/widgets/custom_button.dart';
 import 'package:pingme/widgets/custom_text_field.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
+  const ForgotPasswordScreen({super.key});
 
   @override
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
@@ -31,7 +31,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     setState(() => _isLoading = true);
 
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    final success = await authProvider.resetPassword(_emailController.text.trim());
+    final success =
+        await authProvider.resetPassword(_emailController.text.trim());
 
     setState(() => _isLoading = false);
 
@@ -40,10 +41,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     } else if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(authProvider.errorMessage ?? 'Failed to send reset email'),
+          content:
+              Text(authProvider.errorMessage ?? 'Failed to send reset email'),
           backgroundColor: AppTheme.errorRed,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
       );
     }
@@ -92,7 +95,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     icon: const Icon(Icons.arrow_back_ios_new_rounded),
                     onPressed: () => Navigator.pop(context),
                     style: IconButton.styleFrom(
-                      backgroundColor: isDark ? AppTheme.cardDark : Colors.white,
+                      backgroundColor:
+                          isDark ? AppTheme.cardDark : Colors.white,
                       padding: const EdgeInsets.all(12),
                     ),
                   ).animate().fadeIn().slideX(begin: -0.2, end: 0),
@@ -120,7 +124,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           size: 60,
                           color: Colors.white,
                         ),
-                      ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+                      )
+                          .animate()
+                          .scale(duration: 600.ms, curve: Curves.elasticOut),
                     ),
 
                     const SizedBox(height: 40),
@@ -128,10 +134,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     // Title
                     Text(
                       'Forgot Password?',
-                      style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ).animate().fadeIn(delay: 200.ms).slideX(begin: -0.2, end: 0),
+                      style:
+                          Theme.of(context).textTheme.headlineMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                    )
+                        .animate()
+                        .fadeIn(delay: 200.ms)
+                        .slideX(begin: -0.2, end: 0),
                     const SizedBox(height: 12),
                     Text(
                       'No worries! Enter your email address and we\'ll send you a link to reset your password.',
@@ -159,7 +169,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         }
                         return null;
                       },
-                    ).animate().fadeIn(delay: 400.ms).slideX(begin: -0.2, end: 0),
+                    )
+                        .animate()
+                        .fadeIn(delay: 400.ms)
+                        .slideX(begin: -0.2, end: 0),
 
                     const SizedBox(height: 32),
 
@@ -170,7 +183,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       isLoading: _isLoading,
                       gradient: AppTheme.primaryGradient,
                       icon: Icons.send_rounded,
-                    ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2, end: 0),
+                    )
+                        .animate()
+                        .fadeIn(delay: 500.ms)
+                        .slideY(begin: 0.2, end: 0),
                   ] else ...[
                     // Success State
                     Center(
@@ -192,40 +208,39 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               .scale(duration: 600.ms, curve: Curves.elasticOut)
                               .then()
                               .shimmer(duration: 1000.ms),
-
                           const SizedBox(height: 32),
-
                           Text(
                             'Email Sent!',
-                            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium
+                                ?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: AppTheme.successGreen,
                                 ),
                           ).animate().fadeIn(delay: 200.ms),
-
                           const SizedBox(height: 16),
-
                           Text(
                             'We\'ve sent a password reset link to:',
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
                                   color: Colors.grey,
                                 ),
                             textAlign: TextAlign.center,
                           ).animate().fadeIn(delay: 300.ms),
-
                           const SizedBox(height: 8),
-
                           Text(
                             _emailController.text.trim(),
-                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                  color: AppTheme.primaryPurple,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: AppTheme.primaryPurple,
+                                    ),
                             textAlign: TextAlign.center,
                           ).animate().fadeIn(delay: 400.ms),
-
                           const SizedBox(height: 32),
-
                           Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
@@ -245,27 +260,31 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 Expanded(
                                   child: Text(
                                     'Please check your inbox and spam folder. The link will expire in 1 hour.',
-                                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          color: isDark ? Colors.grey.shade400 : Colors.grey.shade700,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.copyWith(
+                                          color: isDark
+                                              ? Colors.grey.shade400
+                                              : Colors.grey.shade700,
                                           height: 1.4,
                                         ),
                                   ),
                                 ),
                               ],
                             ),
-                          ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2, end: 0),
-
+                          )
+                              .animate()
+                              .fadeIn(delay: 500.ms)
+                              .slideY(begin: 0.2, end: 0),
                           const SizedBox(height: 40),
-
                           CustomButton(
                             text: 'Back to Login',
                             onPressed: () => Navigator.pop(context),
                             gradient: AppTheme.primaryGradient,
                             icon: Icons.arrow_back_rounded,
                           ).animate().fadeIn(delay: 600.ms),
-
                           const SizedBox(height: 16),
-
                           TextButton(
                             onPressed: () {
                               setState(() {

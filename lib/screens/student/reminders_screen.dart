@@ -13,7 +13,7 @@ import 'package:pingme/widgets/minimal_card.dart';
 /// Regain-Style Reminders Screen
 /// Clean list of reminders with category filters
 class RemindersScreen extends StatefulWidget {
-  const RemindersScreen({Key? key}) : super(key: key);
+  const RemindersScreen({super.key});
 
   @override
   State<RemindersScreen> createState() => _RemindersScreenState();

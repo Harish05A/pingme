@@ -12,10 +12,10 @@ class DistractionPopup extends StatefulWidget {
   final VoidCallback onDismiss;
 
   const DistractionPopup({
-    Key? key,
+    super.key,
     required this.appName,
     required this.onDismiss,
-  }) : super(key: key);
+  });
 
   @override
   State<DistractionPopup> createState() => _DistractionPopupState();

@@ -8,7 +8,7 @@ import 'package:pingme/models/reminder_model.dart';
 /// Add Reminder Screen for Students
 /// Allows students to create personal reminders
 class AddReminderScreen extends StatefulWidget {
-  const AddReminderScreen({Key? key}) : super(key: key);
+  const AddReminderScreen({super.key});
 
   @override
   State<AddReminderScreen> createState() => _AddReminderScreenState();

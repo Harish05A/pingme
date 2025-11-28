@@ -12,14 +12,14 @@ class MinimalCard extends StatelessWidget {
   final bool hasShadow;
 
   const MinimalCard({
-    Key? key,
+    super.key,
     required this.child,
     this.padding,
     this.color,
     this.borderRadius,
     this.onTap,
     this.hasShadow = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

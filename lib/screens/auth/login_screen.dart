@@ -9,7 +9,7 @@ import 'package:pingme/widgets/custom_button.dart';
 import 'package:pingme/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -48,7 +48,8 @@ class _LoginScreenState extends State<LoginScreen> {
           content: Text(authProvider.errorMessage ?? 'Login failed'),
           backgroundColor: AppTheme.errorRed,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
       );
     }
@@ -93,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: size.height * 0.08),
-                  
+
                   // Logo and Title
                   Center(
                     child: Column(
@@ -123,22 +124,30 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 24),
                         Text(
                           'PingMe',
-                          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineLarge
+                              ?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 42,
                                 foreground: Paint()
-                                  ..shader = AppTheme.primaryGradient.createShader(
+                                  ..shader =
+                                      AppTheme.primaryGradient.createShader(
                                     const Rect.fromLTWH(0, 0, 200, 70),
                                   ),
                               ),
-                        ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.3, end: 0),
+                        )
+                            .animate()
+                            .fadeIn(duration: 600.ms)
+                            .slideY(begin: -0.3, end: 0),
                         const SizedBox(height: 8),
                         Text(
                           'Smart Academic Reminder',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                color: Colors.grey,
-                                letterSpacing: 1.2,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    color: Colors.grey,
+                                    letterSpacing: 1.2,
+                                  ),
                         ).animate().fadeIn(delay: 200.ms, duration: 600.ms),
                       ],
                     ),
@@ -192,7 +201,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     obscureText: _obscurePassword,
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                        _obscurePassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
                       ),
                       onPressed: () {
                         setState(() => _obscurePassword = !_obscurePassword);

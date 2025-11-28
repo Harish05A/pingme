@@ -6,9 +6,9 @@ class BreakTimerScreen extends StatefulWidget {
   final int breakDuration; // in minutes
 
   const BreakTimerScreen({
-    Key? key,
+    super.key,
     this.breakDuration = 5,
-  }) : super(key: key);
+  });
 
   @override
   State<BreakTimerScreen> createState() => _BreakTimerScreenState();

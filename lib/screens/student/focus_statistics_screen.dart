@@ -6,7 +6,7 @@ import 'package:pingme/providers/focus_provider.dart';
 import 'package:pingme/widgets/stat_card.dart';
 
 class FocusStatisticsScreen extends StatefulWidget {
-  const FocusStatisticsScreen({Key? key}) : super(key: key);
+  const FocusStatisticsScreen({super.key});
 
   @override
   State<FocusStatisticsScreen> createState() => _FocusStatisticsScreenState();

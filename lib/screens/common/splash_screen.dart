@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pingme/config/app_theme.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,8 @@ class SplashScreen extends StatelessWidget {
                 ),
               )
                   .animate(onPlay: (controller) => controller.repeat())
-                  .shimmer(duration: 2000.ms, color: Colors.white.withOpacity(0.5))
+                  .shimmer(
+                      duration: 2000.ms, color: Colors.white.withOpacity(0.5))
                   .then()
                   .shake(duration: 1000.ms, hz: 2, curve: Curves.easeInOut),
 
@@ -77,10 +78,7 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
-                  .animate()
-                  .fadeIn(duration: 800.ms)
-                  .slideY(begin: 0.3, end: 0),
+              ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.3, end: 0),
 
               const SizedBox(height: 12),
 
@@ -93,9 +91,7 @@ class SplashScreen extends StatelessWidget {
                   letterSpacing: 1.5,
                   fontWeight: FontWeight.w300,
                 ),
-              )
-                  .animate()
-                  .fadeIn(delay: 400.ms, duration: 800.ms),
+              ).animate().fadeIn(delay: 400.ms, duration: 800.ms),
 
               const SizedBox(height: 60),
 

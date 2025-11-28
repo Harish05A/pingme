@@ -8,7 +8,7 @@ import 'package:pingme/screens/faculty/view_reminders_screen.dart';
 import 'package:pingme/screens/faculty/analytics_screen.dart';
 
 class FacultyHomeScreen extends StatefulWidget {
-  const FacultyHomeScreen({Key? key}) : super(key: key);
+  const FacultyHomeScreen({super.key});
 
   @override
   State<FacultyHomeScreen> createState() => _FacultyHomeScreenState();

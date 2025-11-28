@@ -4,7 +4,7 @@ import 'package:pingme/config/app_theme.dart';
 import 'package:pingme/providers/reminder_provider.dart';
 
 class FacultyAnalyticsScreen extends StatelessWidget {
-  const FacultyAnalyticsScreen({Key? key}) : super(key: key);
+  const FacultyAnalyticsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

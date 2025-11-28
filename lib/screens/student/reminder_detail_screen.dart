@@ -9,9 +9,9 @@ class ReminderDetailScreen extends StatelessWidget {
   final ReminderModel reminder;
 
   const ReminderDetailScreen({
-    Key? key,
+    super.key,
     required this.reminder,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ import 'package:pingme/widgets/custom_text_field.dart';
 import 'package:pingme/widgets/custom_button.dart';
 
 class CreateReminderScreen extends StatefulWidget {
-  const CreateReminderScreen({Key? key}) : super(key: key);
+  const CreateReminderScreen({super.key});
 
   @override
   State<CreateReminderScreen> createState() => _CreateReminderScreenState();
@@ -26,7 +26,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
   DateTime? _selectedDeadline;
   TimeOfDay? _selectedTime;
   bool _targetAllStudents = true;
-  List<String> _selectedStudentIds = [];
+  final List<String> _selectedStudentIds = [];
   List<UserModel> _allStudents = [];
   bool _isLoadingStudents = false;
 
@@ -199,7 +199,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
 
             // Type Dropdown
             DropdownButtonFormField<ReminderType>(
-              value: _selectedType,
+              initialValue: _selectedType,
               decoration: const InputDecoration(
                 labelText: 'Type',
                 border: OutlineInputBorder(),
@@ -218,7 +218,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
 
             // Priority Dropdown
             DropdownButtonFormField<ReminderPriority>(
-              value: _selectedPriority,
+              initialValue: _selectedPriority,
               decoration: const InputDecoration(
                 labelText: 'Priority',
                 border: OutlineInputBorder(),

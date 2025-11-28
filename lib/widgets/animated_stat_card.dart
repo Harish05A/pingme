@@ -11,14 +11,14 @@ class AnimatedStatCard extends StatefulWidget {
   final VoidCallback? onTap;
 
   const AnimatedStatCard({
-    Key? key,
+    super.key,
     required this.icon,
     required this.label,
     required this.value,
     this.suffix,
     required this.gradient,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   State<AnimatedStatCard> createState() => _AnimatedStatCardState();

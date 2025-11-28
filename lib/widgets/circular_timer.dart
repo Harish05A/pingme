@@ -11,12 +11,12 @@ class CircularTimer extends StatelessWidget {
   final double size;
 
   const CircularTimer({
-    Key? key,
+    super.key,
     required this.totalSeconds,
     required this.remainingSeconds,
     this.isActive = false,
     this.size = 280,
-  }) : super(key: key);
+  });
 
   String _formatTime(int seconds) {
     final minutes = seconds ~/ 60;

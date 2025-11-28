@@ -6,7 +6,7 @@ import 'package:pingme/providers/reminder_provider.dart';
 import 'package:pingme/models/reminder_model.dart';
 
 class ViewRemindersScreen extends StatefulWidget {
-  const ViewRemindersScreen({Key? key}) : super(key: key);
+  const ViewRemindersScreen({super.key});
 
   @override
   State<ViewRemindersScreen> createState() => _ViewRemindersScreenState();

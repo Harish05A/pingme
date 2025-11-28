@@ -10,9 +10,9 @@ class StudentMainScreen extends StatefulWidget {
   final int initialTab;
 
   const StudentMainScreen({
-    Key? key,
+    super.key,
     this.initialTab = 0,
-  }) : super(key: key);
+  });
 
   @override
   State<StudentMainScreen> createState() => _StudentMainScreenState();

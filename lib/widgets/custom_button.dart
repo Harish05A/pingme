@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
   final double borderRadius;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.isLoading = false,
@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height = 56,
     this.borderRadius = 16,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,9 @@ class CustomButton extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: isEnabled ? gradient : null,
         color: isEnabled
-            ? (gradient == null ? (backgroundColor ?? AppTheme.primaryPurple) : null)
+            ? (gradient == null
+                ? (backgroundColor ?? AppTheme.primaryPurple)
+                : null)
             : Colors.grey.shade400,
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: isEnabled
@@ -113,7 +115,7 @@ class CustomOutlinedButton extends StatelessWidget {
   final double height;
 
   const CustomOutlinedButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.icon,
@@ -121,7 +123,7 @@ class CustomOutlinedButton extends StatelessWidget {
     this.textColor,
     this.width,
     this.height = 56,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
